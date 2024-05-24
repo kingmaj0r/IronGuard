@@ -32,7 +32,7 @@ function PasswordManager() {
   };
 
   return (
-    <div className="fixed top-4 right-4 z-50">
+    <div className="fixed top-4 right-4 z-50" data-testid="password-manager">
       <div className="max-w-lg mx-auto p-6 bg-white rounded-md shadow-md">
         <h1 className="text-3xl font-semibold mb-4">Password Manager</h1>
         <form

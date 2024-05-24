@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export default function Generator(props) {
     const [passwords, setPasswords] = useState([]);
@@ -9,8 +9,6 @@ export default function Generator(props) {
         includeNumbers: false,
         includeCharacters: false
     });
-    const [currentPassword, setCurrentPassword] = useState('');
-    const [strongerPassword, setStrongerPassword] = useState('');
 
     const handleChange = (event) => {
         const { id, value, checked } = event.target;
@@ -43,11 +41,7 @@ export default function Generator(props) {
         }
     }
 
-    useEffect(() => {
-        getPasswords(passwordConfig.size);
-    }, [passwordConfig]);
-
-    function createPassword(length) {
+    const createPassword = useCallback((length) => {
         function getRandomChar() {
             const charPool = [];
             if (passwordConfig.includeSymbols) {
@@ -65,8 +59,7 @@ export default function Generator(props) {
             }
 
             const randomCharPool = charPool[Math.floor(Math.random() * charPool.length)];
-            const randomChar = randomCharPool[Math.floor(Math.random() * randomCharPool.length)];
-            return randomChar;
+            return randomCharPool[Math.floor(Math.random() * randomCharPool.length)];
         }
 
         let password = '';
@@ -75,10 +68,10 @@ export default function Generator(props) {
             password += getRandomChar();
         }
         return password;
-    }
+    }, [passwordConfig]);
 
-    function getPasswords(passwordsLength = 8) {
-        let passwordsArray = [];
+    const getPasswords = useCallback((passwordsLength = 8) => {
+        const passwordsArray = [];
 
         if (passwordsLength <= 35 && passwordsLength >= 5) {
             for (let i = 1; i <= passwordConfig.number; i++) {
@@ -86,10 +79,14 @@ export default function Generator(props) {
             }
             setPasswords(passwordsArray);
         }
-    }
+    }, [passwordConfig, createPassword]);
+
+    useEffect(() => {
+        getPasswords(passwordConfig.size);
+    }, [passwordConfig, getPasswords]);
 
     const copyPassword = (event) => {
-        let password = event.target.value;
+        const password = event.target.value;
         navigator.clipboard.writeText(password)
             .then(() => {
                 alert('Copied to clipboard: ' + password);
@@ -99,22 +96,10 @@ export default function Generator(props) {
             });
     }
 
-    const generateStrongerPassword = () => {
-        let strongerPassword = currentPassword;
-        if (passwordConfig.includeSymbols) {
-            strongerPassword += '!@$%^&*()_+~`|}{[]:;?><,./-';
-        }
-        if (passwordConfig.includeNumbers) {
-            strongerPassword = strongerPassword.replace(/[0-9]/g, '');
-            strongerPassword += Math.floor(Math.random() * 10);
-        }
-        setStrongerPassword(strongerPassword);
-    }
-
     return (
         <section className="max-sm:w-full max-sm:px-0 max-sm:py-4
         h-full p-12 w-5/6 flex flex-col items-center justify-center
-        gap-4">
+        gap-4" data-testid="generator">
             <span className="font-bold text-center gap-2 flex flex-col justify-center 
             items-center">
                 <h1 className="text-5xl animate-text-entry text-white

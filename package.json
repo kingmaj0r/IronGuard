@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "test": "vitest run",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },
   "dependencies": {
     "classnames": "^2.3.2",
@@ -19,8 +21,19 @@
     "typescript": "^5.4.5"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^15.0.7",
+    "@types/jest": "^29.5.12",
     "@types/node": "20.12.12",
     "@types/react": "18.3.3",
-    "autoprefixer": "^10.4.14"
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.3",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "jsdom": "^24.0.0",
+    "vitest": "^1.6.0"
   }
 }

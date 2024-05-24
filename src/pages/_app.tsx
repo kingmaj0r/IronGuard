@@ -1,9 +1,9 @@
 import React from 'react';
-import PasswordManager from '@/components/PasswordManager'; 
-import Generator from '@/components/Generator';
+import PasswordManager from '../components/PasswordManager'; 
+import Generator from '../components/Generator';
 
-import "@/assets/css/tailwind.css"
-import "@/assets/css/app.css"
+import "../assets/css/tailwind.css"
+import "../assets/css/app.css"
 
 const _app: React.FC = () => {
   return (
