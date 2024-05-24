@@ -1,13 +1,8 @@
-![image](https://github.com/pandal34r/SecureKey/assets/170285142/dae99f0d-7823-41d1-8a84-6d293b1360c9)
+![image](https://raw.githubusercontent.com/kingmaj0r/IronGuard/main/public/logo.png)
 
-# SecureKey
+# IronGuard
 A very modern password generator
 
-
-
-Project Title: SecureKey - Your Ultimate Password Solution
-
-Overview:
 SecureKey is a cutting-edge password generator and manager designed to prioritize security and user convenience. Unlike many existing solutions, SecureKey operates entirely locally, ensuring maximum privacy and protection of sensitive data. It combines robust password generation with intuitive management features, providing users with a comprehensive tool for safeguarding their online accounts.
 
 Key Features:
@@ -34,17 +29,15 @@ SecureKey represents the next evolution in password management, combining cuttin
 
 ## Installation
 
-Setting up SecureKey is a breeze. Just follow these steps:
+Setting up IronGuard is a breeze. Just follow these steps:
 
 ### 1. Install Dependencies
-npm install
+`npm install`
 
 ### 2. Run app
-npm run dev
+`npm run dev`
 
 ### 3. build app
-npm run build
+`npm run build`
 
 Have fun and Enjoy!
-
-![image](https://github.com/pandal34r/SecureKey/assets/170285142/c5eb1f52-3206-4848-96a4-3c01179f6356)

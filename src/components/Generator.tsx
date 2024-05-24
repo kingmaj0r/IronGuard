@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import { useState, useEffect, useCallback } from "react";
+import logo from "../assets/img/logo.png";
 
 export default function Generator(props) {
     const [passwords, setPasswords] = useState([]);
@@ -102,8 +104,7 @@ export default function Generator(props) {
         gap-4" data-testid="generator">
             <span className="font-bold text-center gap-2 flex flex-col justify-center 
             items-center">
-                <h1 className="text-5xl animate-text-entry text-white
-                "><span className="text-emerald-500">Secure</span> Key</h1>
+                <Image src={logo} className="text-2xl w-96 animate-text-entry" alt="logo" />
                 <h2 className="text-white text-3xl font-bold animate-text-entry-invert
                 max-md:hidden">Never use weak <span className="text-emerald-500">passwords </span>again.</h2>
             </span>
@@ -131,7 +132,7 @@ export default function Generator(props) {
             <div className="flex w-6/12 h-12 items-center justify-around">
                 <div className="flex flex-col w-full h-full gap-4">
                     <input type="range" min="1" max="14" defaultValue={passwordConfig.number}
-                        className={`passwordgenerated ${passwordConfig.number == 1 ? "hover:slider-thumb:rounded-full" : ""} ${passwordConfig.number == 20 ? "hover:slider-thumb:rounded-full" : ""}`} onChange={handleChange} id={'passwords-number'} />
+                        className={`hover:slider-thumb:rounded-full`} onChange={handleChange} id={'passwords-number'} />
                     <div className="text-white flex flex-nowrap font-bold
                     items-center justify-between h-full w-full tracking-widest">
                         <h1 className={`${passwordConfig.number == 1 ? "text-white" : "text-emerald-500"} duration-500`}>1</h1>
