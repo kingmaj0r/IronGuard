@@ -1,3 +1,5 @@
+![image](https://github.com/pandal34r/SecureKey/assets/170285142/dae99f0d-7823-41d1-8a84-6d293b1360c9)
+
 # SecureKey
 A very modern password generator
 
