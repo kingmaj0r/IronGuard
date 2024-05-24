@@ -1,5 +1,3 @@
-'use client';
-
 import { useState, useEffect } from "react";
 
 export default function Generator(props) {
@@ -158,20 +156,20 @@ export default function Generator(props) {
                 </div>
             </div>
 
-            <div class="bg-gray-900 flex items-center justify-center gap-1">
+            <div className="bg-gray-900 flex items-center justify-center gap-1">
                 <div className="flex">
-                    <input type="checkbox" id="include-symbols:" class="peer hidden" onChange={handleChange} />
-                    <label for="include-symbols:" class="select-none cursor-pointer rounded-lg border - 2 border-gray-200
+                    <input type="checkbox" id="include-symbols:" className="peer hidden" onChange={handleChange} />
+                    <label htmlFor="include-symbols:" className="select-none cursor-pointer rounded-lg border - 2 border-gray-200
                     py-3 px-6 font-bold text-gray-200 transition-colors duration-200 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 "> Include Symbols </label>
                 </div>
                 <div className="flex" >
-                    <input type="checkbox" id="include-numbers:" class="peer hidden" onChange={handleChange}/>
-                    <label for="include-numbers:" class="select-none cursor-pointer rounded-lg border - 2 border-gray-200
+                    <input type="checkbox" id="include-numbers:" className="peer hidden" onChange={handleChange}/>
+                    <label htmlFor="include-numbers:" className="select-none cursor-pointer rounded-lg border - 2 border-gray-200
                     py-3 px-6 font-bold text-gray-200 transition-colors duration-200 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 "> include numbers </label>
                 </div>
                 <div className="flex">
-                    <input type="checkbox" id="include-characters:" class="peer hidden" onChange={handleChange} />
-                    <label for="include-characters:" class="select-none cursor-pointer rounded-lg border - 2 border-gray-200
+                    <input type="checkbox" id="include-characters:" className="peer hidden" onChange={handleChange} />
+                    <label htmlFor="include-characters:" className="select-none cursor-pointer rounded-lg border - 2 border-gray-200
                     py-3 px-6 font-bold text-gray-200 transition-colors duration-200 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200 "> include characters </label>
                 </div>
             </div>
