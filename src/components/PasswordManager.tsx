@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function PasswordManager() {
   const [passwords, setPasswords] = useState([]);
-  const [showError, setShowError] = useState(false); // State to control error message display
+  const [showError, setShowError] = useState(false); 
 
   useEffect(() => {
     const storedPasswords = localStorage.getItem("passwords");
@@ -11,22 +11,20 @@ function PasswordManager() {
     }
   }, []);
 
-  // Function to add a new password
   const addPassword = (newPassword) => {
     if (passwords.length < 5) {
       const updatedPasswords = [...passwords, newPassword];
       setPasswords(updatedPasswords);
       localStorage.setItem("passwords", JSON.stringify(updatedPasswords));
-      setShowError(false); // Reset error state
+      setShowError(false);
     } else {
-      setShowError(true); // Show error message
+      setShowError(true);
       setTimeout(() => {
-        setShowError(false); // Hide error message after 5 seconds
+        setShowError(false);
       }, 5000);
     }
   };
 
-  // Function to remove a password
   const removePassword = (index) => {
     const updatedPasswords = passwords.filter((_, i) => i !== index);
     setPasswords(updatedPasswords);
@@ -38,12 +36,14 @@ function PasswordManager() {
       <div className="max-w-lg mx-auto p-6 bg-white rounded-md shadow-md">
         <h1 className="text-3xl font-semibold mb-4">Password Manager</h1>
         <form
-          onSubmit={(e) => {
+          onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
             e.preventDefault();
-            const newPassword = e.target.elements.password.value.trim();
-            if (newPassword !== "") {
-              addPassword(newPassword);
-              e.target.reset();
+            const form = e.target as HTMLFormElement;
+            const newPassword = form.elements.namedItem('password') as HTMLInputElement;
+            const trimmedPassword = newPassword.value.trim();
+            if (trimmedPassword !== "") {
+              addPassword(trimmedPassword);
+              form.reset();
             }
           }}
           className="mb-4"
