@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.generator-button {
+    @apply text-white bg-emerald-500 p-4 border-2 h-1/5 whitespace-nowrap flex justify-center
+    border-solid border-white rounded-lg hover:bg-emerald-600 duration-300 max-md:h-3/5 items-center;
+}
+
+.password-input {
+    @apply text-emerald-500 bg-slate-800 rounded-md 
+    border-zinc-500 border-2 text-center h-full w-full animate-appear
+    cursor-pointer hover:text-white duration-500 hover:tracking-widest 
+    max-md:text-sm;
+}
+
+.size-input {
+    @apply bg-transparent appearance-none cursor-pointer w-full h-full outline-none 
+    max-md:w-full flex items-center justify-center;
+}
+
+.size-input::-webkit-slider-runnable-track {
+    @apply bg-emerald-500 h-6 rounded-xl max-sm:h-4 flex items-center justify-center duration-300;
+}
+
+.size-input::-webkit-slider-thumb {
+    @apply appearance-none border-emerald-300 border-2 
+    bg-slate-600 h-6 w-6 rounded-full max-md:h-10 max-md:w-10 max-md:-mt-2 hover:h-8 hover:w-8 hover:rounded-t-none hover:-mt-1 max-md:hover:w-12 max-md:hover:h-12 max-md:hover:-mt-3 duration-200;
+}
+
+.size-input::-moz-range-thumb {
+    @apply appearance-none border-emerald-300 border-2 
+    bg-slate-600 h-6 w-6 rounded-full max-md:h-10 max-md:w-10 max-md:-mt-2 hover:h-8 hover:w-8 hover:rounded-t-none max-md:hover:w-10 max-md:hover:mt-0 duration-200;
+}
+
+.size-input::-moz-range-track {
+    @apply bg-emerald-500 h-6 rounded-xl max-sm:h-4 flex items-center justify-center;
+}
+
+.characters {
+    @apply   h-5 -me-96
+}
+
+.Symbols {
+ @apply    h-5 me-96
+}
+
+.numbers {
+    @apply   h-5 
+}
