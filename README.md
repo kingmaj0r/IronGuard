@@ -3,7 +3,7 @@
 # SecureKey
 A very modern password generator
 
-Certainly! Here's a project description for SecureKey, your password generator and manager:
+
 
 Project Title: SecureKey - Your Ultimate Password Solution
 
